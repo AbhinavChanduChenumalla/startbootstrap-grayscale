@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Feedback form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+        #para1,
+        #head1 {
+            text-align: center;
+            margin: 0;
+            padding: 2px;
+        }
+        
+        #head1,
+        #para1,
+        #text,
+        #submit {
+            font-family: 'Oswald', 'Times New Roman', Times, serif;
+        }
+        
+        .header {
+            background-color: lightskyblue;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <div class="header">
+        <h1 id="head1">Feedback form</h1>
+        <p id="para1">Because it matters the most.....</p>
+    </div>
+    <center>
+        <img src="feedback1.jpg" alt=""></img>
+    </center>
+    <br>
+    <form method="POST" action="validate_feedback.php">
+        <center>
+            <textarea rows="10" cols="120" placeholder="please give your feedback here." id="text" name="Feedback"></textarea>
+        </center>
+        <br>
+        <center>
+            <input type="submit" value="submit" class="btn btn-info" id="submit">
+        </center>
+    </form>
+</body>
+
+</html>

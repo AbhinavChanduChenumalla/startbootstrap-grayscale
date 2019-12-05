@@ -1,0 +1,66 @@
+<?php
+$c=mysqli_connect("127.0.0.1","root","","rejolt");
+$i=$_POST['t2'];
+$ia=$_POST['t3'];
+$f=0;
+if($i=='admin')
+{
+$s="select * from aku";
+$re=mysqli_query($c,$s);
+if(mysqli_num_rows($re)>0)
+{
+while($row=mysqli_fetch_assoc($re))
+{
+if($i==$row['MOBILE_NUMBER'])
+{
+if($ia==$row['PASSWORD'])
+{
+$f=1;
+break;
+}
+else
+$f=0;
+}
+}
+}
+if($f==1)
+{
+header('Location:adm.php');
+}
+else
+{
+echo "login failed";
+header('Location:r1.html');
+}
+}
+else
+	{
+		$s="select MOBILE_NUMBER,PASSWORD from aku";
+		$re=mysqli_query($c,$s);
+if(mysqli_num_rows($re)>0)
+{
+while($row=mysqli_fetch_assoc($re))
+{
+if($i==$row['MOBILE_NUMBER'])
+{
+if($ia==$row['PASSWORD'])
+{
+$f=1;
+break;
+}
+else
+$f=0;
+}
+}
+}
+if($f==1)
+{
+header('Location:log.html');
+}
+else
+{
+header('Location:rejolt.html');
+}
+}
+	
+?>
